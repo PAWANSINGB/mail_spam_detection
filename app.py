@@ -25,11 +25,11 @@ def home():
         probability = model.predict_proba(message_vector)
 
         if prediction[0] == 1:
-            result = "✅ Ham Mail"
+            result = "🚨 Spam Mail"
             score = round(probability[0][1]*100,2)
 
         else:
-            result = "🚨 Spam Mail"
+            result = "✅ Ham Mail"
             score = round(probability[0][0]*100,2)
 
     return render_template(
